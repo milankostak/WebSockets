@@ -1,0 +1,17 @@
+<script>
+    var wsClient  = new WebSocket("ws://localhost:8080/")
+
+    wsClient.onopen = () => {
+        console.log("WebSocket: connection is opened.");
+    };
+
+    wsClient.onmessage = (e) => {
+        console.log(JSON.parse(e.data));
+    };
+
+    wsClient.onclose = () => {
+        console.log("WebSocket: connection was closed.");
+        console.log("WebSocket: trying to restore the connection...");
+    };
+
+</script>
