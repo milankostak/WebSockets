@@ -32,8 +32,8 @@ public class TyrusClient {
 
     private int i = 0;
     private long sum  = 0;
-    private String pattern = "\\{\"timestamp\":(\\d+)\\}";
-    private Pattern r = Pattern.compile(pattern);
+    private final String pattern = "\\{\"timestamp\":(\\d+)}";
+    private final Pattern r = Pattern.compile(pattern);
 
     @OnMessage
     public String onMessage(String message, Session session) {

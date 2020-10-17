@@ -33,10 +33,10 @@ public class JavaWsClient extends WebSocketClient {
 
     private int i = 0;
     private long sum  = 0;
-    private String pattern = "\\{\"timestamp\":(\\d+)}";
-    private Pattern r = Pattern.compile(pattern);
-    private static Gson GSON = new Gson();
-    private final int count = 1000000;
+    private final String pattern = "\\{\"timestamp\":(\\d+)}";
+    private final Pattern r = Pattern.compile(pattern);
+    private static final Gson GSON = new Gson();
+    private final int count = 1_000_000;
 
     @Override
     public void onMessage(String message) {

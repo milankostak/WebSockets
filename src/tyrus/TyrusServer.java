@@ -20,8 +20,8 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class TyrusServer {
 
     private Session session;
-    private Set<TyrusServer> chatEndpoints = new CopyOnWriteArraySet<>();
-    private HashMap<String, String> users = new HashMap<>();
+    private final Set<TyrusServer> chatEndpoints = new CopyOnWriteArraySet<>();
+    private final HashMap<String, String> users = new HashMap<>();
 
     @OnOpen
     public void onOpen(Session session, @PathParam("username") String username) {
@@ -96,6 +96,7 @@ public class TyrusServer {
         try {
             server.start();
             System.out.print("Please press a key to stop the server.");
+            //noinspection ResultOfMethodCallIgnored
             System.in.read();
         } catch (Exception e) {
             throw new RuntimeException(e);
